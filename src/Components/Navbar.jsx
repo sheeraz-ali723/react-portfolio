@@ -1,22 +1,27 @@
 import React, { useState } from "react";
-import { useNavigate } from 'react-router-dom'
-
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
-    const navigate =useNavigate()
-  const clickhere=()=>{
-    navigate("/Contact")
-  }
+  const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const clickhere = () => {
+    navigate("/Contact");
+    setMenuOpen(false);
+  };
 
   return (
     <nav className="bg-slate-900 text-white shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         
         {/* Logo */}
-        <a href="/" className="text-2xl font-bold tracking-wide">
+        <Link
+          to="/"
+          className="text-2xl font-bold tracking-wide"
+          onClick={() => setMenuOpen(false)}
+        >
           Dev<span className="text-cyan-400">Hub</span>
-        </a>
+        </Link>
 
         {/* Hamburger Button */}
         <button
@@ -33,38 +38,63 @@ const Navbar = () => {
           } md:flex`}
         >
           <li className="p-4 md:p-0">
-            <a href="/" className="hover:text-cyan-400 transition duration-300">
+            <Link
+              to="/"
+              onClick={() => setMenuOpen(false)}
+              className="hover:text-cyan-400 transition duration-300"
+            >
               Home
-            </a>
+            </Link>
           </li>
 
           <li className="p-4 md:p-0">
-            <a href="/About" className="hover:text-cyan-400 transition duration-300">
+            <Link
+              to="/About"
+              onClick={() => setMenuOpen(false)}
+              className="hover:text-cyan-400 transition duration-300"
+            >
               About
-            </a>
+            </Link>
           </li>
 
           <li className="p-4 md:p-0">
-            <a href="/Services" className="hover:text-cyan-400 transition duration-300">
+            <Link
+              to="/Services"
+              onClick={() => setMenuOpen(false)}
+              className="hover:text-cyan-400 transition duration-300"
+            >
               Services
-            </a>
+            </Link>
           </li>
 
           <li className="p-4 md:p-0">
-            <a href="/Portfolio" className="hover:text-cyan-400 transition duration-300">
+            <Link
+              to="/Portfolio"
+              onClick={() => setMenuOpen(false)}
+              className="hover:text-cyan-400 transition duration-300"
+            >
               Portfolio
-            </a>
+            </Link>
+          </li>
+
+          {/* Mobile Contact Button */}
+          <li className="p-4 md:hidden">
+            <button
+              onClick={clickhere}
+              className="w-full bg-cyan-500 px-5 py-2 rounded-lg hover:bg-cyan-600 transition duration-300"
+            >
+              Contact
+            </button>
           </li>
         </ul>
 
-        {/* Contact Button */}
-        <a
+        {/* Desktop Contact Button */}
+        <button
           onClick={clickhere}
-          href="#contact"
           className="hidden md:block bg-cyan-500 px-5 py-2 rounded-lg hover:bg-cyan-600 transition duration-300"
         >
           Contact
-        </a>
+        </button>
       </div>
     </nav>
   );

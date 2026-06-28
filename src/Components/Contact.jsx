@@ -40,9 +40,9 @@ setError('');
 
 
   return (
-    <div data-aos="fade-left" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-950 via-slate-900 to-cyan-950 px-4">
+    <div data-aos="fade-left" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-950 via-slate-900 to-cyan-950  px-4 py-8 overflow-y-auto px-4 py-8 overflow-y-auto">
 
-      <div className="w-full max-w-md bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl p-8 shadow-2xl">
+      <div className="w-full max-w-md sm:max-w-lg ... p-6 sm:p-8 my-6 bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl p-8 shadow-2xl">
 
         {/* Heading */}
         <h1 className="text-3xl font-bold text-center text-white mb-2">
