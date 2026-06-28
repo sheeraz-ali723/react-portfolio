@@ -134,14 +134,14 @@ const home = () => {
   </div>
 </div>
 
-<div data-aos="zoom-in-up" className='h-screen grid grid-cols-2 bg-amber-300'>
+<div data-aos="zoom-in-up" className='min-h-screen grid grid-cols-1 md:grid-cols-2 bg-amber-300'>
 <div className="min-h-screen flex items-center justify-center px-6 
                 bg-gradient-to-br from-slate-950 via-slate-900 to-cyan-950">
 
   <div className="max-w-3xl text-center space-y-6">
 
     {/* Heading */}
-    <h1 className="text-3xl md:text-4xl font-bold text-white">
+   <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
       We are hiring a team of <span className="text-cyan-400">Web Developers</span>
     </h1>
 
@@ -198,15 +198,13 @@ const home = () => {
   </div>
 </div>
 <div>
- <img 
-          src={img01}
-          alt='man pic'
-           className="h-screen rounded-4xlxl overflow-hidden relative
-        bg-[#1e293b] border border-[#334155]
-        shadow-lg hover:shadow-cyan-400/30
-        hover:border-cyan-400
-         transition-all duration-500 group"
-          />
+<div className="h-64 md:h-screen">
+  <img 
+    src={img01}
+    alt='man pic'
+    className="w-full h-full object-cover overflow-hidden ..."
+  />
+</div>
 </div>
 
 </div> 
